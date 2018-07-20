@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\5e0cdb8c60d539bd07a109c1c2f23c6990c313ec\output\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="D:\svn-projects\signApp\trunk\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_3106e8faeeb839cdae6359d26b229952912434fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\5e0cdb8c60d539bd07a109c1c2f23c6990c313ec\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
+        <dex dex="D:\svn-projects\signApp\trunk\android\app\build\intermediates\pre-dexed\debug\classes_607b14e5228f0da5ca29c6470ca113bdd0d70f48.jar" />
+    </item>
+
+</items>
