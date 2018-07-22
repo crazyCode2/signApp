@@ -12,6 +12,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-import": "^1.8.0",
+    "prop-types": "^15.6.2",
     "react": "16.4.1",
     "react-native": "0.55.4",
     "react-navigation": "^2.8.0",

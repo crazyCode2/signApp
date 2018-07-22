@@ -1,11 +1,16 @@
 /**
- * 登录
+ * 登录页面
  */
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Button } from 'antd-mobile-rn';
 import { connect } from "react-redux";
 import  {loginAction} from '../../store/rootAction';
+import Wallpaper from '../../components/Wallpaper';
+import Logo from '../../components/Logo';
+import Form from '../../components/Form';
+import SignupSection from '../../components/SignupSection';
+import ButtonSubmit from '../../components/ButtonSubmit';
 
 class Login extends Component {
   // 生命周期--组件挂载完毕
@@ -36,23 +41,12 @@ class Login extends Component {
     const {loginState} = this.props;
 
     return (
-      <View>
-        <Text style = {styles.text}>
-          login的页面你知道
-        </Text>
-        <Text style = {styles.login}>
-          您的登陆状态是：{loginState?`已登陆成功！奖励你一朵小红花！`:'您还没登陆'}
-        </Text>
-        <View style = {styles.bigButton}>
-          <Button
-            onPressIn={this.login}
-            accessibilityLabel="Learn more about this purple button"
-            type='primary'
-          >
-            {loginState?"退出登陆":"立即登陆"}
-          </Button>
-        </View>
-      </View>
+      <Wallpaper>
+        <Logo />
+        <Form />
+        <SignupSection />
+        <ButtonSubmit />
+      </Wallpaper>
     );
   }
 }
