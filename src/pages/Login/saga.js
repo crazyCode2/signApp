@@ -3,12 +3,14 @@
  */
 import { fork ,put, call, take, takeEvery,select } from 'redux-saga/effects';
 import  {loginAction} from '../../store/rootAction';
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
+import request from '../../utils/request';
+// 登录
 function * login(){
   while (true) {
-    let request = yield take(loginAction.loginRequest);
-    const data = yield call(delay,500);
+    let actionInfo = yield take(loginAction.loginRequest);
+    const data = yield call(()=>{
+      request('/project/list')
+    });
     yield put({
       type: loginAction.updateLoginState,
       payload: {
@@ -17,11 +19,11 @@ function * login(){
     });
   }
 }
-
+// 注销(退出)
 function * signOut(){
   while (true) {
     let request = yield take(loginAction.signOut);
-    const data = yield call(delay,500);
+    // const data = yield call(delay,500);
     yield put({
       type: loginAction.updateLoginState,
       payload: {
@@ -31,7 +33,7 @@ function * signOut(){
   }
 }
 
-export default function * helloSaga(){
+export default function * loginSaga(){
   yield fork(signOut);
   yield fork(login);
 }

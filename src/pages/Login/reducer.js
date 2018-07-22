@@ -7,9 +7,8 @@ let stateData = {
   loginState:false,
 };
 
-function mainPageReducer(state = stateData, action) {
+function loginReducer(state = stateData, action) {
   if (action.type === loginAction.updateLoginState) {
-    console.log(action)
     /**
      * Object.assign({},obj,obj1);
      * 花括号叫目标对象，后面的obj、obj1是源对象。
@@ -18,14 +17,9 @@ function mainPageReducer(state = stateData, action) {
     return Object.assign({}, state, {
       loginState:action.payload.loginState
     });
-  } else if(action.type === loginAction.updateUseriInfo){
-    return Object.assign({},state,{
-      loginState:action.payload.loginState
-    });
-
   } else {
     return state;
   }
 }
 
-export default mainPageReducer;
+export default loginReducer;

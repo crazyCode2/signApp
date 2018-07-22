@@ -1,6 +1,12 @@
 /**
  * 行为
  */
+// 首页 action
+export const homeAction = {
+  //
+};
+
+// 登录 action
 export const loginAction = {
   loginRequest: "LOGIN_REQUEST",
   signOut:'SIGN_OUT',
@@ -8,8 +14,22 @@ export const loginAction = {
   updateLoginState:'UPDATE_LOGIN_STATE',
 };
 
-export const centerAction = {
-  loginSuccess: "LOAD_LOCAL_USER_SUCCESS",
-  changeUser: "CLEAN_LOCAL_USER",
-  update: "CHECK_APP_UPDATE"
+// 消息 action
+export const messageAction = {
+  //
 };
+
+// 我的页面 action
+export const mineAction = {
+  //
+};
+
+// 我的用电 action
+export const myElectricityAction = {
+  //
+};
+
+// 实时监测 action
+export const realtimeMonitorAction = {
+  //
+}

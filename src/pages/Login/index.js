@@ -14,7 +14,7 @@ class Login extends Component {
   }
 
   login=()=>{
-    /*let {loginState} = this.props;
+    let {loginState} = this.props;
 
     if(loginState){
       // 退出
@@ -26,7 +26,7 @@ class Login extends Component {
       this.props.dispatch({
         type: loginAction.loginRequest,
       })
-    }*/
+    }
 
     // 跳转主页面
     this.props.navigation.navigate('Main');
@@ -60,7 +60,7 @@ class Login extends Component {
 // 将 状态 绑定到 属性
 const mapStateToProps = (state) => {
   return {
-    loginState: state.mainPageReducer.loginState
+    loginState: state.loginReducer.loginState
   }
 };
 // 将 Dispatch 绑定到 属性

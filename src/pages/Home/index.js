@@ -4,8 +4,8 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 
-class Home extends React.Component {
-  render() {
+export default class HomeScreen extends React.Component{
+  render(){
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         {/* other code from before here */}
@@ -14,15 +14,6 @@ class Home extends React.Component {
           onPress={() => this.props.navigation.navigate('Electricity')}
         />
       </View>
-    );
-  }
-}
-
-export default class HomeScreen extends React.Component{
-  render(){
-    console.log('home props', this.props)
-    return (
-      <Home navigation={this.props.navigation} />
     )
   }
 }
