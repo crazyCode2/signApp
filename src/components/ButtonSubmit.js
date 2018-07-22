@@ -52,6 +52,8 @@ export default class ButtonSubmit extends Component {
       this.setState({isLoading: false});
       this.buttonAnimated.setValue(0);
       this.growAnimated.setValue(0);
+      // 跳转主页面
+      this.props.navigation.navigate('Main');
     }, 2300);
   }
 

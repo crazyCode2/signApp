@@ -45,7 +45,7 @@ class Login extends Component {
         <Logo />
         <Form />
         <SignupSection />
-        <ButtonSubmit />
+        <ButtonSubmit {...this.props} />
       </Wallpaper>
     );
   }
