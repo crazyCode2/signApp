@@ -2,7 +2,8 @@
  * 入口文件
  */
 import React, { Component } from 'react';
-import Navigator from './src/utils/navigation';
+// 导航
+import Navigator from './src/common/AppNavigation';
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 // 同步redux

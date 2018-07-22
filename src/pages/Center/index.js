@@ -18,4 +18,4 @@ export default class Center extends Component {
       </View>
     );
   }
-} 
+}

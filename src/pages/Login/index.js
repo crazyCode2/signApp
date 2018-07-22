@@ -2,7 +2,8 @@
  * 登录
  */
 import React, { Component } from 'react';
-import { Text, View, Button, StyleSheet} from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
+import { Button } from 'antd-mobile-rn';
 import { connect } from "react-redux";
 import  {loginAction} from '../../store/rootAction';
 
@@ -13,7 +14,7 @@ class Login extends Component {
   }
 
   login=()=>{
-    let {loginState} = this.props;
+    /*let {loginState} = this.props;
 
     if(loginState){
       // 退出
@@ -25,7 +26,10 @@ class Login extends Component {
       this.props.dispatch({
         type: loginAction.loginRequest,
       })
-    }
+    }*/
+
+    // 跳转主页面
+    this.props.navigation.navigate('Main');
   };
 
   render() {
@@ -41,11 +45,12 @@ class Login extends Component {
         </Text>
         <View style = {styles.bigButton}>
           <Button
-            onPress={this.login}
-            title={loginState?"退出登陆":"立即登陆"}
-            color="#000"
+            onPressIn={this.login}
             accessibilityLabel="Learn more about this purple button"
-          />
+            type='primary'
+          >
+            {loginState?"退出登陆":"立即登陆"}
+          </Button>
         </View>
       </View>
     );
@@ -67,12 +72,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const styles = StyleSheet.create({
   bigButton: {
-    width:100,
-    height:40,
-    flexDirection:'row',
-    backgroundColor:'red',
-    alignItems:'center',
-    marginLeft:150,
+    margin:10
   },
   text: {
     color: 'red',
