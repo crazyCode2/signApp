@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 // 导航
-import Navigator from './src/common/AppNavigation';
+import Navigator from './src/navigation/EnterNavigation';
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 // 同步redux
