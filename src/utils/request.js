@@ -1,19 +1,11 @@
+/**
+ * 请求方法封装
+ */
 import axios from 'axios';
-import { BASE_URL, LOG_BASE_URL } from './config';
-import { notification } from 'antd';
-
-axios.default.baseURL = BASE_URL;
+import {baseUrl,loginUrl} from './config';
 
 export function checkStatus(response) {
-  // console.log('response.code', response)
   if (response && response.code === 1002) {
-    notification.error({
-      message: `请求错误 ${response.code}`,
-      description: `${response.message}`,
-    });
-    const error = new Error(response.message);
-    error.name = response.code;
-    error.response = response;
     throw error;
   } else {
     return response;
@@ -21,22 +13,20 @@ export function checkStatus(response) {
 }
 
 axios.interceptors.response.use(function (response) {
-  // Do something with response data
   return response;
 }, function (error) {
   if (error.response.status === 401) {
-    window.location.href = LOG_BASE_URL + '/login?redirect_url=' + window.location.pathname;
+    alert('登陆超时')
+    // window.location.href = LOG_BASE_URL + '/login?redirect_url=' + window.location.pathname;
   }
-  // Do something with response error
-  return Promise.reject(error);
 });
 
 export default function request(url, options) {
-  const common = options && options.common;
+  const login = options && options.login;
   const defaultOptions = {
     withCredentials: true,
     url: url,
-    baseURL: common ? LOG_BASE_URL : BASE_URL,
+    baseURL: login ? loginUrl : baseUrl,
   };
   const newOptions = { ...options, ...defaultOptions };
   return axios.request(newOptions)
@@ -44,5 +34,7 @@ export default function request(url, options) {
     .then((response) => {
       return response.data;
     })
-    .catch(error => console.log(error));
+    .catch(function (error) {//加上catch
+      console.log(error);
+    })
 }
