@@ -1,5 +1,5 @@
 /**
- * 主页面
+ * 导航配置
  */
 /* ---depencies--- */
 import {
@@ -8,14 +8,14 @@ import {
 } from 'react-navigation';
 
 /* ---pages--- */
-import HomeScreen from './Home/index';
-import MassageScreen from './Message/index';
-import MineScreen from './Mine/index';
-import MyElectricityScreen from './Home/MyElectricity/index';
-import DetailsScreen from './Message/Details/index';
-import CompanyInforScreen from './Mine/CompanyInfor/index';
+import HomeScreen from '../pages/Home/index';
+import MassageScreen from '../pages/Message/index';
+import MineScreen from '../pages/Mine/index';
+import MyElectricityScreen from '../pages/Home/MyElectricity/index';
+import DetailsScreen from '../pages/Message/Details/index';
+import CompanyInforScreen from '../pages/Mine/CompanyInfor/index';
 
-/* --- */
+/* ---主页 StackNav注册--- */
 const HomeStack = createStackNavigator({
   Home: {
     screen: HomeScreen,
@@ -27,6 +27,7 @@ const HomeStack = createStackNavigator({
   Electricity: MyElectricityScreen,
 });
 
+/* ---消息 StackNav注册--- */
 const MassageStack = createStackNavigator({
   Massage: {
     screen: MassageScreen,
@@ -38,6 +39,7 @@ const MassageStack = createStackNavigator({
   Details: DetailsScreen,
 });
 
+/* ---我的 StackNav注册--- */
 const MineStack = createStackNavigator({
   Mine: {
     screen: MineScreen,
@@ -83,7 +85,6 @@ MineStack.navigationOptions = ({ navigation }) => {
   };
 };
 
-// 底部导航栏
 export default createBottomTabNavigator(
   {
     Home: HomeStack,
